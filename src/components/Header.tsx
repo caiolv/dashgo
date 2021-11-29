@@ -43,10 +43,7 @@ export default function Header() {
                 <Icon as={RiSearchLine} fontSize="20" />
             </Flex>
 
-            <Flex
-                align="center"
-                ml="auto"
-            >
+            <Flex align="center" ml="auto">
                 <HStack
                   spacing="8"
                   mx="8"
