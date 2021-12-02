@@ -1,7 +1,7 @@
 import { Flex, Button, Stack, FormLabel, FormControl } from '@chakra-ui/react';
 import { SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup'
+import {yupResolver} from '@hookform/resolvers/yup/dist/yup';
 
 import { Input } from '../components/Form/Input';
 
