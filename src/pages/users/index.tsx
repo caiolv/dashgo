@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Box,
     Flex,
@@ -27,12 +27,15 @@ import Pagination from '../../components/Pagination';
 import { useUsers } from '../../services/hooks/useUsers';
 
 export default function UserList() {
-    const { data, isLoading, isFetching, error, refetch } = useUsers();
+    const [page, setPage] = useState(1);
+    const { data, isLoading, isFetching, error, refetch } = useUsers(page);
 
     const isWideVersion = useBreakpointValue({
         base: false,
         lg: true,
     });
+
+    console.log(data);
 
     useEffect(() => {
         
@@ -103,7 +106,7 @@ export default function UserList() {
                                     </Tr>
                                 </Thead>
                                 <Tbody>
-                                    {data.map(user => (
+                                    {data.users.map(user => (
                                         <Tr key={user.id}>
                                             <Td px={["4", "4", "6"]}>
                                                 <Checkbox colorScheme="pink" />
@@ -134,7 +137,13 @@ export default function UserList() {
                                     ))}
                                 </Tbody>
                             </Table>
-                            <Pagination />
+
+
+                            <Pagination 
+                                totalCountOfRegisters={data.totalCount}
+                                currentPage={page}
+                                onPageChange={setPage}
+                            />
                         </>
                     )}
                 </Box>
