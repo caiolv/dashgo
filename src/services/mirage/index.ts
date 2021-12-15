@@ -53,6 +53,7 @@ export function makeServer() {
         );
       });
 
+      this.get('/users/:id');
       this.post('/users');
 
       this.namespace = ''; // quando terminar de definir as rotas do mirage, ele vai voltar o estado original pra n prejudicar o api do next
