@@ -80,7 +80,6 @@ export default function UserList({ users }) {
                                 colorScheme="gray"
                                 icon={<Icon as={AiOutlineReload} fontSize="20" color="gray.900" />}
                                 mr="4"
-                                onClick={refetch}
                             />
                             <NextLink href="/users/create" passHref>
                                 <Button
